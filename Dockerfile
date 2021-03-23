@@ -21,8 +21,6 @@ RUN git clone https://github.com/memgraph/pymgclient /pymgclient && \
   python3 setup.py build && \
   python3 setup.py install
 
-
-COPY public /app/public
 COPY suppy_chain.py /app/suppy_chain.py
 WORKDIR /app
 

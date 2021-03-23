@@ -1,5 +1,6 @@
 from database import Memgraph
 import db_operations as operations
+import os
 
 MG_HOST = os.getenv('MG_HOST', '127.0.0.1')
 MG_PORT = int(os.getenv('MG_PORT', '7687'))
@@ -12,8 +13,8 @@ db = Memgraph(host=MG_HOST, port=MG_PORT, username=MG_USERNAME,
 
 
 def main():
-    operations.clear_db()
-    operations.init_data()
+    operations.clear_database(db)
+    operations.init_data(db, 6, 2)
 
 
 if __name__ == "__main__":
